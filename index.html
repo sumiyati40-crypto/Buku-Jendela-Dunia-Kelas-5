@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Jendela Dunia - Media Pembelajaran Bahasa Indonesia Kelas V SD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGASI UTAMA -->
+  <header class="app-header">
+    <div class="logo-container">
+      <span class="logo-icon">📚</span>
+      <div>
+        <h1 class="app-title">BUKU JENDELA DUNIA</h1>
+        <p class="app-subtitle">Bahasa Indonesia Kelas V SD - Kurikulum Merdeka</p>
+      </div>
+    </div>
+    <div class="user-badge" id="userBadge">
+      👤 <span id="displayName">Tamu</span>
+    </div>
+  </header>
+
+  <!-- NAVIGASI MENU -->
+  <nav class="app-nav" id="mainNav">
+    <button class="nav-btn active" onclick="switchPage('beranda')">🏠 Beranda</button>
+    <button class="nav-btn" onclick="switchPage('tujuan')">🎯 Tujuan</button>
+    <button class="nav-btn" onclick="switchPage('materi')">📖 Materi</button>
+    <button class="nav-btn" onclick="switchPage('kegiatan')">🧩 Kegiatan</button>
+    <button class="nav-btn" onclick="switchPage('kuis')">📝 Kuis</button>
+    <button class="nav-btn" onclick="switchPage('refleksi')">💭 Refleksi</button>
+    <button class="nav-btn" onclick="switchPage('rekap')">📊 Rekap & Guru</button>
+    <button class="nav-btn" onclick="switchPage('petunjuk')">❓ Petunjuk</button>
+  </nav>
+
+  <!-- BAR PROGRES BELAJAR -->
+  <div class="progress-bar-container">
+    <div class="progress-label">Progres Belajar: <span id="progressText">0%</span></div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- CONTAINER HALAMAN (SPA) -->
+  <main class="content-container">
+
+    <!-- 1. HALAMAN BERANDA -->
+    <section id="page-beranda" class="page-section active">
+      <div class="hero-card">
+        <div class="hero-text">
+          <h2>Selamat Datang, Sahabat Literasi! 👋</h2>
+          <p>Mari menjelajahi dunia melalui membaca, menyimak, berbicara, dan menulis. Siapkan dirimu menjadi pembaca cerdas dan pembicara berani!</p>
+          <div class="name-input-box">
+            <label for="studentNameInput">Masukkan Nama Lengkapmu:</label>
+            <input type="text" id="studentNameInput" placeholder="Contoh: Budi Santoso" autocomplete="off">
+            <button class="btn btn-primary" onclick="saveStudentName()">🚀 Mulai Belajar</button>
+          </div>
+        </div>
+        <div class="hero-illustration">
+          <div class="illustration-avatar">📖🧒✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HALAMAN TUJUAN PEMBELAJARAN -->
+    <section id="page-tujuan" class="page-section">
+      <h2 class="section-title">🎯 Capaian & Tujuan Pembelajaran</h2>
+      <div class="card-grid">
+        <div class="card border-blue">
+          <h3>🔍 Membaca & Memirsa</h3>
+          <p>Peserta didik mampu menemukan informasi penting, ide pokok, kosakata baru, serta menyimpulkan isi teks bacaan bertema "Buku Jendela Dunia".</p>
+        </div>
+        <div class="card border-green">
+          <h3>🎧 Menyimak</h3>
+          <p>Peserta didik mampu mengidentifikasi tokoh, pesan moral, dan informasi kunci dari cerita atau teks yang didengarkan melalui audio.</p>
+        </div>
+        <div class="card border-yellow">
+          <h3>🗣️ Berbicara & Mempresentasikan</h3>
+          <p>Peserta didik mampu menyusun kerangka dan mempresentasikan ulasan buku yang disukai secara percaya diri, runtut, dan jelas.</p>
+        </div>
+        <div class="card border-red">
+          <h3>✍️ Menulis</h3>
+          <p>Peserta didik mampu menulis ringkasan, tanggapan, dan rekomendasi buku menggunakan kalimat efektif, ejaan tepat, dan tanda baca yang benar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HALAMAN MATERI PEMBELAJARAN -->
+    <section id="page-materi" class="page-section">
+      <h2 class="section-title">📚 Materi Pembelajaran Utama</h2>
+      
+      <div class="tabs-container">
+        <button class="tab-btn active" onclick="openMateriTab(event, 'mat-1')">1. Jendela Dunia</button>
+        <button class="tab-btn" onclick="openMateriTab(event, 'mat-2')">2. Menyimak Aktif</button>
+        <button class="tab-btn" onclick="openMateriTab(event, 'mat-3')">3. Seni Presentasi</button>
+        <button class="tab-btn" onclick="openMateriTab(event, 'mat-4')">4. Menulis Tanggapan</button>
+      </div>
+
+      <div id="mat-1" class="tab-content active">
+        <h3>📖 Mengapa Buku Disebut Jendela Dunia?</h3>
+        <p>Buku disebut sebagai "Jendela Dunia" karena melalui membaca, kita dapat mengetahui berbagai hal di seluruh dunia tanpa perlu bepergian langsung ke sana. Kita bisa mempelajari sejarah, ilmu pengetahuan, budaya bangsa lain, hingga petualangan imajinatif.</p>
+        <div class="info-box">
+          <strong>💡 Tips Menemukan Ide Pokok:</strong>
+          <ul>
+            <li>Bacalah seluruh paragraf dengan cermat.</li>
+            <li>Cari kalimat utama (biasanya di awal atau di akhir paragraf).</li>
+            <li>Catat kata kunci yang sering diulang.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="mat-2" class="tab-content">
+        <h3>🎧 Langkah Menyimak Informasi secara Aktif</h3>
+        <p>Menyimak bukan sekadar mendengar, tetapi memahami makna tulisan atau lisan.</p>
+        <ol>
+          <li>Dengarkan dengan fokus tanpa memotong pembicaraan.</li>
+          <li>Catat kata kunci: Siapa tokohnya? Apa permasalahannya? Di mana kejadiannya?</li>
+          <li>Temukan pesan moral atau simpulan cerita.</li>
+        </ol>
+      </div>
+
+      <div id="mat-3" class="tab-content">
+        <h3>🗣️ Panduan Mempresentasikan Ulasan Buku</h3>
+        <p>Saat menceritakan buku yang pernah kamu baca kepada teman-teman, pastikan memuat:</p>
+        <ul>
+          <li><strong>Identitas Buku:</strong> Judul, Penulis, & Penertbit.</li>
+          <li><strong>Ringkasan Tokoh & Alur:</strong> Siapa pemeran utama & apa yang terjadi?</li>
+          <li><strong>Manfaat & Alasan Suka:</strong> Mengapa teman-temanmu harus membaca buku ini?</li>
+        </ul>
+      </div>
+
+      <div id="mat-4" class="tab-content">
+        <h3>✍️ Menulis Ringkasan & Tanggapan yang Baik</h3>
+        <p>Gunakan aturan Bahasa Indonesia yang baik dan benar (PUEBI/EYD):</p>
+        <ul>
+          <li>Gunakan huruf kapital di awal kalimat dan pada nama orang/tempat.</li>
+          <li>Gunakan tanda titik (.) untuk mengakhiri kalimat dan koma (,) untuk jeda.</li>
+          <li>Susun paragraf secara runtut (Awal - Isi - Penutup).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. HALAMAN AKTIVITAS INTERAKTIF -->
+    <section id="page-kegiatan" class="page-section">
+      <h2 class="section-title">🧩 Aktivitas Empat Elemen Pembelajaran</h2>
+      
+      <!-- ELEMEN 1: MEMBACA & MEMIRSA -->
+      <div class="activity-card">
+        <h3>1. Aktivitas Membaca: Pentingnya Literasi</h3>
+        <div class="reading-box">
+          <p><strong>Petualangan di Perpustakaan Ceria</strong></p>
+          <p>Di sebuah sekolah dasar, ada perpustakaan unik bernama Perpustakaan Ceria. Perpustakaan ini tidak hanya menyimpan ribuan buku, tetapi juga menyajikan sudut baca yang nyaman. Kirana, murid kelas V SD, sangat suka mengunjungi perpustakaan ini setiap jam istirahat. Menurut Kirana, membaca buku memberinya pengetahuan baru tentang sains, sejarah, dan budaya dari berbagai daerah.</p>
+        </div>
+        <div class="quiz-single">
+          <p><strong>Pertanyaan:</strong> Apa ide pokok dari paragraf di atas?</p>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, false)">Perpustakaan Ceria menjual ribuan buku sains.</button>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, true)">Kirana gemar membaca di Perpustakaan Ceria untuk menambah pengetahuan.</button>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, false)">Anak-anak hanya boleh membaca pada saat jam pelajaran.</button>
+          <div class="feedback-text"></div>
+        </div>
+      </div>
+
+      <!-- ELEMEN 2: MENYIMAK (AUDIO / TTS) -->
+      <div class="activity-card">
+        <h3>2. Aktivitas Menyimak Narrated Story</h3>
+        <p>Dengarkan cerita berikut dengan menekan tombol Audio / Text-to-Speech di bawah ini:</p>
+        <div class="audio-control-panel">
+          <button class="btn btn-secondary" onclick="playTextToSpeech()">▶️ Play / Putar Audio</button>
+          <button class="btn btn-secondary" onclick="pauseTextToSpeech()">⏸️ Jeda</button>
+          <button class="btn btn-secondary" onclick="stopTextToSpeech()">⏹️ Ulangi</button>
+        </div>
+        <div class="transcript-box">
+          <small><em>Teks Simakan (dapat dibacakan guru jika browser tidak mendukung audio):</em></small>
+          <p id="listeningText">"Hari Minggu lalu, Doni mengunjungi pameran buku internasional. Ia menemukan buku komik edukasi tentang kelestarian lingkungan. Dari buku itu, Doni belajar bahwa membuang sampah plastik sembarangan dapat merusak ekosistem laut. Doni berjanji akan mengurangi penggunaan kantong plastik."</p>
+        </div>
+        <div class="quiz-single">
+          <p><strong>Pertanyaan Menyimak:</strong> Apa pesan moral utama yang dipelajari Doni?</p>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, false)">Membeli komik sebanyak-banyaknya di pameran.</button>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, true)">Mengurangi plastik untuk menjaga ekosistem laut.</button>
+          <button class="btn btn-opt" onclick="checkAnswerDirect(this, false)">Pergi ke pameran buku setiap hari Minggu.</button>
+          <div class="feedback-text"></div>
+        </div>
+      </div>
+
+      <!-- ELEMEN 3: BERBICARA (KERANGKA PRESENTASI) -->
+      <div class="activity-card">
+        <h3>3. Aktivitas Berbicara: Kerangka Presentasi Buku Favorit</h3>
+        <p>Isilah kerangka presentasi berikut sebelum kamu tampil berbicara di depan kelas!</p>
+        <form id="speechForm" onsubmit="event.preventDefault(); saveSpeechOutline();">
+          <div class="form-group">
+            <label>Judul Buku Favoritku:</label>
+            <input type="text" id="spTitle" placeholder="Misal: Laskar Pelangi" required>
+          </div>
+          <div class="form-group">
+            <label>Tokoh Utama & Ringkasan Singkat:</label>
+            <textarea id="spSummary" rows="3" placeholder="Siapa tokoh utamanya dan apa cerita menariknya?" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Alasan Memilih Buku Ini:</label>
+            <textarea id="spReason" rows="2" placeholder="Mengapa kamu menyukai buku ini?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">💾 Simpan Kerangka Presentasi</button>
+        </form>
+        <div id="speechFeedback" class="save-status"></div>
+      </div>
+
+      <!-- ELEMEN 4: MENULIS TANGGAPAN BUKU -->
+      <div class="activity-card">
+        <h3>4. Aktivitas Menulis: Tanggapan & Rekomendasi Buku</h3>
+        <p>Tuliskan paragraf tanggapan mengenai pentingnya membaca buku bagi anak-anak!</p>
+        <form id="writingForm" onsubmit="event.preventDefault(); saveWritingData();">
+          <div class="form-group">
+            <label>Paragraf Tanggapanmu (Minimal 3 Kalimat):</label>
+            <textarea id="userWriting" rows="5" placeholder="Tuliskan pendapatmu secara runtut..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">💾 Simpan & Periksa Tulisan</button>
+        </form>
+        <div id="writingReviewBox" class="review-box" style="display:none;">
+          <h4>🔍 Hasil Self-Check Tulisan:</h4>
+          <ul id="writingChecklist"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HALAMAN KUIS EVALUASI -->
+    <section id="page-kuis" class="page-section">
+      <h2 class="section-title">📝 Kuis Evaluasi (10 Soal)</h2>
+      
+      <div id="quizContainer">
+        <div class="quiz-header">
+          <span id="quizCounter">Soal 1 dari 10</span>
+          <span id="quizScoreRealtime">Skor: 0</span>
+        </div>
+        
+        <div class="quiz-body" id="quizBody">
+          <!-- Soal di-render oleh JavaScript -->
+        </div>
+
+        <div class="quiz-footer">
+          <button class="btn btn-secondary" id="btnPrevQuiz" onclick="navigateQuiz(-1)" disabled>⬅️ Sebelumnya</button>
+          <button class="btn btn-primary" id="btnNextQuiz" onclick="navigateQuiz(1)">Berikutnya ➡️</button>
+          <button class="btn btn-success" id="btnSubmitQuiz" onclick="finishQuiz()" style="display:none;">🏆 Selesaikan Kuis</button>
+        </div>
+      </div>
+
+      <!-- RESULT BOX KUIS -->
+      <div id="quizResultBox" class="result-card" style="display:none;">
+        <h3>🎉 Hasil Kuis Evaluasi Objekif</h3>
+        <div class="score-circle" id="finalScoreDisplay">0</div>
+        <p id="scoreMessage">Umpan balik akan muncul di sini.</p>
+        <p>Jawaban Benar: <strong id="correctCount">0</strong> / 10 Soal</p>
+        <button class="btn btn-secondary" onclick="resetQuiz()">🔄 Ulangi Kuis</button>
+      </div>
+    </section>
+
+    <!-- 6. HALAMAN REFLEKSI PESERTA DIDIK -->
+    <section id="page-refleksi" class="page-section">
+      <h2 class="section-title">💭 Refleksi Belajar Peserta Didik</h2>
+      <form id="refleksiForm" onsubmit="event.preventDefault(); saveRefleksi();">
+        <div class="form-group">
+          <label>1. Apa pengetahuan baru yang saya peroleh hari ini?</label>
+          <textarea id="ref1" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>2. Kegiatan apa yang paling saya sukai dalam media ini?</label>
+          <textarea id="ref2" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>3. Bagian mana yang menurut saya masih sulit diselesaikan?</label>
+          <textarea id="ref3" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>4. Buku apa yang ingin saya baca selanjutnya?</label>
+          <input type="text" id="ref4" required>
+        </div>
+        <button type="submit" class="btn btn-primary">💾 Simpan Refleksi</button>
+      </form>
+      <div id="refleksiStatus" class="save-status"></div>
+    </section>
+
+    <!-- 7. HALAMAN REKAP HASIL & RUBRIK GURU -->
+    <section id="page-rekap" class="page-section">
+      <h2 class="section-title">📊 Rekapitulasi Hasil Belajar & Penilaian Guru</h2>
+      
+      <div id="printArea" class="rekap-container">
+        <div class="rekap-header">
+          <h3>LAPORAN HASIL BELAJAR PESERTA DIDIK</h3>
+          <p>Media Interaktif: Buku Jendela Dunia - Kelas V SD</p>
+          <hr>
+        </div>
+
+        <div class="rekap-info">
+          <p><strong>Nama Peserta Didik:</strong> <span id="rkNama">-</span></p>
+          <p><strong>Nilai Kuis Objektif:</strong> <span id="rkNilaiKuis">0</span> / 100</p>
+        </div>
+
+        <h4>A. Hasil Aktivitas Berbicara (Kerangka Presentasi)</h4>
+        <div class="display-box" id="rkSpeechText">Belum ada data.</div>
+
+        <h4>B. Hasil Aktivitas Menulis (Tanggapan Buku)</h4>
+        <div class="display-box" id="rkWritingText">Belum ada data.</div>
+
+        <h4>C. Hasil Refleksi Peserta Didik</h4>
+        <div class="display-box" id="rkRefleksiText">Belum ada data.</div>
+
+        <hr>
+        <h4>D. Rubrik Penilaian Guru (Manual)</h4>
+        
+        <div class="rubrik-section">
+          <h5>1. Rubrik Berbicara & Presentasi</h5>
+          <table class="rubrik-table">
+            <thead>
+              <tr>
+                <th>Aspek</th>
+                <th>Skor (1-4)</th>
+                <th>Catatan Guru</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kesesuaian Isi Presentasi</td>
+                <td><input type="number" min="1" max="4" class="input-score" id="scoreSpIsi" value="4"></td>
+                <td><input type="text" class="input-note" id="noteSpIsi" placeholder="Sangat baik"></td>
+              </tr>
+              <tr>
+                <td>Kelancaran & Keberanian</td>
+                <td><input type="number" min="1" max="4" class="input-score" id="scoreSpLancar" value="4"></td>
+                <td><input type="text" class="input-note" id="noteSpLancar" placeholder="Lancar dan berani"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rubrik-section">
+          <h5>2. Rubrik Menulis Tanggapan</h5>
+          <table class="rubrik-table">
+            <thead>
+              <tr>
+                <th>Aspek</th>
+                <th>Skor (1-4)</th>
+                <th>Catatan Guru</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Keruntutan Paragraf & Ejaan</td>
+                <td><input type="number" min="1" max="4" class="input-score" id="scoreWrEjaan" value="4"></td>
+                <td><input type="text" class="input-note" id="noteWrEjaan" placeholder="Ejaan dan koma tepat"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="form-group" style="margin-top:15px;">
+          <label>Catatan Umum / Umbi Umpan Balik Guru:</label>
+          <textarea id="teacherGeneralNotes" rows="3" placeholder="Tuliskan apresiasi dan saran untuk siswa..."></textarea>
+        </div>
+      </div>
+
+      <div class="action-buttons-group">
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ Cetak Laporan (PDF/Print)</button>
+        <button class="btn btn-success" onclick="exportToCSV()">📥 Ekspor Data ke CSV</button>
+      </div>
+    </section>
+
+    <!-- 8. HALAMAN PETUNJUK PENGGUNAAN -->
+    <section id="page-petunjuk" class="page-section">
+      <h2 class="section-title">❓ Petunjuk Penggunaan Media</h2>
+      <div class="card">
+        <h3>Bagi Peserta Didik:</h3>
+        <ol>
+          <li>Isikan nama lengkapmu pada halaman <strong>Beranda</strong>.</li>
+          <li>Pelajari materi pada menu <strong>Materi</strong> secara berurutan.</li>
+          <li>Kerjakan seluruh latihan interaktif di menu <strong>Kegiatan</strong>.</li>
+          <li>Uji kemampuanmu di menu <strong>Kuis</strong> sampai selesai.</li>
+          <li>Isi perasaaan dan tanggapanmu pada menu <strong>Refleksi</strong>.</li>
+        </ol>
+
+        <h3>Bagi Guru:</h3>
+        <ol>
+          <li>Media ini berjalan secara lokal (offline) melalui web browser standar.</li>
+          <li>Gunakan menu <strong>Rekap & Guru</strong> untuk melihat progres siswa, menginput nilai rubrik terbuka, memberi catatan umpan balik, serta mencetak laporan hasil belajar siswa.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <p>&copy; 2026 Media Pembelajaran Interaktif Bahasa Indonesia Kelas V SD - Kurikulum Merdeka</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
